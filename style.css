@@ -36,11 +36,17 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
 
 /* ===== LANGUAGE TOGGLE ===== */
-.lang-en { display: none; }
-body.en .lang-tr { display: none; }
-body.en .lang-en { display: initial; }
-body.en .lang-en.block { display: block; }
-.lang-tr.block { display: block; }
+.lang-en { display: none !important; }
+body.en .lang-tr { display: none !important; }
+body.en .lang-en { display: inline !important; }
+body.en .lang-en.block,
+body.en p.lang-en,
+body.en div.lang-en,
+body.en h2.lang-en,
+body.en h3.lang-en,
+body.en h1.lang-en,
+body.en span.lang-en { display: block !important; }
+.lang-tr.block { display: block !important; }
 
 /* ===== TOP BAR ===== */
 .topbar {
@@ -92,9 +98,9 @@ body.en .lang-en.block { display: block; }
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 2px;
+  gap: 4px;
   flex: 1;
-  flex-wrap: nowrap;
+  justify-content: center;
 }
 
 .nav-links > li { position: relative; }
