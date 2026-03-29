@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konuşmacılar / Speakers — ICDAH 2026</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .speaker-full-card {
+      background: var(--navy-mid);
+      border: 1px solid rgba(0,201,177,0.15);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      transition: var(--transition);
+      margin-bottom: 24px;
+    }
+    .speaker-full-card:hover { border-color: var(--teal); transform: translateX(4px); }
+    .speaker-full-left {
+      background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+      border-right: 1px solid rgba(0,201,177,0.1);
+      text-align: center;
+    }
+    .speaker-full-avatar {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-head);
+      font-size: 1.6rem; font-weight: 800; color: var(--navy);
+      margin-bottom: 16px;
+      border: 3px solid rgba(0,201,177,0.4);
+    }
+    .speaker-full-country { font-size: 1.2rem; }
+    .speaker-full-right { padding: 28px 32px; }
+    .speaker-full-name {
+      font-family: var(--font-head);
+      font-size: 1.4rem; font-weight: 800; color: white; margin-bottom: 6px;
+    }
+    .speaker-full-inst { color: var(--gray); font-size: 0.9rem; margin-bottom: 16px; line-height: 1.6; }
+    .speaker-full-talk {
+      background: rgba(0,201,177,0.08);
+      border-left: 3px solid var(--teal);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.875rem;
+      color: var(--text);
+    }
+    .speaker-full-talk .talk-label {
+      font-size: 0.7rem; color: var(--teal); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;
+    }
+    @media (max-width: 640px) {
+      .speaker-full-card { grid-template-columns: 1fr; }
+      .speaker-full-left { padding: 24px; border-right: none; border-bottom: 1px solid rgba(0,201,177,0.1); flex-direction: row; gap: 16px; text-align: left; }
+      .speaker-full-right { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+
+<div class="page-hero">
+  <h1><span class="lang-tr">Konuşmacılar</span><span class="lang-en">Speakers</span></h1>
+  <p class="sub lang-tr">ICDAH 2026 Davetli Konuşmacıları</p>
+  <p class="sub lang-en">ICDAH 2026 Invited Speakers</p>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <div class="speaker-full-card">
+      <div class="speaker-full-left">
+        <div class="speaker-full-avatar">RR</div>
+        <div class="speaker-full-country">🇿🇦</div>
+      </div>
+      <div class="speaker-full-right">
+        <div class="speaker-full-name">Prof. Dr. Ravinder Rena</div>
+        <div class="speaker-full-inst">
+          DUT Business School, Faculty of Management Sciences<br>
+          Durban University of Technology, Republic of South Africa
+        </div>
+        <div class="speaker-full-talk">
+          <div class="talk-label lang-tr">Konuşma Başlığı</div>
+          <div class="talk-label lang-en">Talk Title</div>
+          DIGITAL ECONOMY AND RISK MANAGEMENT IN THE VUCA WORLD
+        </div>
+      </div>
+    </div>
+
+    <div class="speaker-full-card">
+      <div class="speaker-full-left">
+        <div class="speaker-full-avatar">LB</div>
+        <div class="speaker-full-country">🇷🇴</div>
+      </div>
+      <div class="speaker-full-right">
+        <div class="speaker-full-name">Prof. Dr. Larissa-Margareta Batrancea</div>
+        <div class="speaker-full-inst">
+          Department of Business<br>
+          Babeș-Bolyai University Cluj-Napoca, Romania
+        </div>
+        <div class="speaker-full-talk">
+          <div class="talk-label lang-tr">Konuşma Başlığı</div>
+          <div class="talk-label lang-en">Talk Title</div>
+          EMPOWERING NATIONS, EXTENDING LIVES: THE ROLE OF HUMAN CAPITAL IN ADVANCING HEALTH, CONFRONTING ENVIRONMENTAL INEQUITIES AND REVEALING THE COSTS OF INFORMALITY
+        </div>
+      </div>
+    </div>
+
+    <div class="speaker-full-card">
+      <div class="speaker-full-left">
+        <div class="speaker-full-avatar">JR</div>
+        <div class="speaker-full-country">🇲🇽</div>
+      </div>
+      <div class="speaker-full-right">
+        <div class="speaker-full-name">Prof. Dr. Julia Rodriguez Morales</div>
+        <div class="speaker-full-inst">
+          Benemérita Universidad Autónoma de Puebla (BUAP), Mexico
+        </div>
+        <div class="speaker-full-talk">
+          <div class="talk-label lang-tr">Konuşma Başlığı</div>
+          <div class="talk-label lang-en">Talk Title</div>
+          LEADERSHIP WITH PURPOSE: THE ROLE OF THE CIO IN BUILDING COMPREHENSIVE HEALTH POLICIES FOR IT TEAMS IN HYBRID AND GLOBALIZED ENVIRONMENTS
+        </div>
+      </div>
+    </div>
+
+    <div class="speaker-full-card">
+      <div class="speaker-full-left">
+        <div class="speaker-full-avatar">RC</div>
+        <div class="speaker-full-country">🇬🇧</div>
+      </div>
+      <div class="speaker-full-right">
+        <div class="speaker-full-name">Dr. Rhyddhi Chakraborty</div>
+        <div class="speaker-full-inst">
+          Senior Lecturer, Public Health and Leadership<br>
+          Course Leader, BSc. (Hons.) Management and Leadership in Health and Social Care<br>
+          Faculty of Health, Medicine and Social Care<br>
+          School of Allied Health and Social Care, Anglia Ruskin University, UK
+        </div>
+        <div class="speaker-full-talk">
+          <div class="talk-label lang-tr">Konuşma Başlığı</div>
+          <div class="talk-label lang-en">Talk Title</div>
+          FROM VULNERABILITY TO RESILIENCE: HEALTH AND CLIMATE JUSTICE IN HIGH BURDEN REGIONS
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="js/layout.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
