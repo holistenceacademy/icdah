@@ -1,99 +1,95 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="lang-tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Önemli Tarihler / Important Dates — ICDAH 2026</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dates - Çanakkale Congress 2026</title>
+  <meta name="description" content="Bilingual congress website template." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div id="navbar-placeholder"></div>
-
-<div class="page-hero">
-  <h1><span class="lang-tr">Önemli Tarihler</span><span class="lang-en">Important Dates</span></h1>
-  <p class="sub lang-tr">ICDAH 2026 Takvimi</p>
-  <p class="sub lang-en">ICDAH 2026 Timeline</p>
-</div>
-
-<section class="section">
-  <div class="container" style="max-width:700px;">
-
-    <div style="display:flex; flex-direction:column; gap:0; position:relative;">
-      <div style="position:absolute; left:23px; top:0; bottom:0; width:2px; background: linear-gradient(to bottom, var(--teal), var(--gold)); opacity:0.3; z-index:0;"></div>
-
-      <div class="date-card" style="position:relative; z-index:1; margin-bottom:16px; background:var(--navy-mid);">
-        <div class="date-icon" style="background:rgba(0,201,177,0.2);">📄</div>
-        <div class="date-info">
-          <div class="date-label lang-tr">Bildiri Özeti Gönderimi İçin Son Tarih</div>
-          <div class="date-label lang-en">Deadline for Abstract Submission</div>
-          <div class="date-value lang-tr">24 Kasım 2026</div>
-          <div class="date-value lang-en">November 24, 2026</div>
-        </div>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-badge">CC</div>
+      <div class="brand-text">
+        <small><span data-lang-inline="tr">Kongre</span><span data-lang-inline="en">Congress</span></small>
+        <strong>Çanakkale Congress 2026</strong>
       </div>
+    </a>
 
-      <div class="date-card" style="position:relative; z-index:1; margin-bottom:16px; background:var(--navy-mid);">
-        <div class="date-icon" style="background:rgba(0,201,177,0.2);">✅</div>
-        <div class="date-info">
-          <div class="date-label lang-tr">Kabul Edilen Bildirilerin İlanı</div>
-          <div class="date-label lang-en">Announcement of Accepted Papers</div>
-          <div class="date-value lang-tr">25 Kasım 2026</div>
-          <div class="date-value lang-en">November 25, 2026</div>
-        </div>
+    <nav class="desktop-nav">
+      <a href="index.html"><span data-lang-inline="tr">Ana Sayfa</span><span data-lang-inline="en">Home</span></a>
+      <a href="programme.html"><span data-lang-inline="tr">Program</span><span data-lang-inline="en">Programme</span></a>
+      <a href="speakers.html"><span data-lang-inline="tr">Konuşmacılar</span><span data-lang-inline="en">Speakers</span></a>
+      <a href="venue.html"><span data-lang-inline="tr">Yer</span><span data-lang-inline="en">Venue</span></a>
+      <a href="dates.html" class="active"><span data-lang-inline="tr">Tarihler</span><span data-lang-inline="en">Dates</span></a>
+      <a href="register.html"><span data-lang-inline="tr">Kayıt</span><span data-lang-inline="en">Register</span></a>
+      <a href="contact.html"><span data-lang-inline="tr">İletişim</span><span data-lang-inline="en">Contact</span></a>
+    </nav>
+
+    <div class="topbar-actions">
+      <div class="lang-switch" aria-label="Language switcher">
+        <button id="langTR" class="active" type="button">TR</button>
+        <button id="langEN" type="button">EN</button>
       </div>
-
-      <div class="date-card" style="position:relative; z-index:1; margin-bottom:16px; background:var(--navy-mid);">
-        <div class="date-icon" style="background:rgba(0,201,177,0.2);">📝</div>
-        <div class="date-info">
-          <div class="date-label lang-tr">Kayıt İçin Son Tarih</div>
-          <div class="date-label lang-en">Deadline for Registration</div>
-          <div class="date-value lang-tr">29 Kasım 2026</div>
-          <div class="date-value lang-en">November 29, 2026</div>
-        </div>
-      </div>
-
-      <div class="date-card" style="position:relative; z-index:1; margin-bottom:16px; background:var(--navy-mid);">
-        <div class="date-icon" style="background:rgba(0,201,177,0.2);">📋</div>
-        <div class="date-info">
-          <div class="date-label lang-tr">Konferans Programının İlanı</div>
-          <div class="date-label lang-en">Announcement of the Conference Program</div>
-          <div class="date-value lang-tr">30 Kasım 2026</div>
-          <div class="date-value lang-en">November 30, 2026</div>
-        </div>
-      </div>
-
-      <div class="date-card" style="position:relative; z-index:1; margin-bottom:16px; background:var(--navy-mid);">
-        <div class="date-icon" style="background:rgba(0,201,177,0.2);">📑</div>
-        <div class="date-info">
-          <div class="date-label lang-tr">Tam Metin Gönderimi İçin Son Tarih</div>
-          <div class="date-label lang-en">Deadline for Full Text Submission</div>
-          <div class="date-value lang-tr">15 Aralık 2026</div>
-          <div class="date-value lang-en">December 15, 2026</div>
-        </div>
-      </div>
-
-      <div class="date-card" style="position:relative; z-index:1; margin-bottom:16px; border-color:var(--gold); background:rgba(245,166,35,0.06);">
-        <div class="date-icon" style="background:rgba(245,166,35,0.2);">🎤</div>
-        <div class="date-info">
-          <div class="date-label lang-tr" style="color:var(--gold);">Kongre Tarihleri</div>
-          <div class="date-label lang-en" style="color:var(--gold);">Conference Dates</div>
-          <div class="date-value lang-tr" style="color:var(--gold); font-size:1.3rem;">11–12 Aralık 2026</div>
-          <div class="date-value lang-en" style="color:var(--gold); font-size:1.3rem;">December 11–12, 2026</div>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:32px; background:var(--navy-mid); border-radius:var(--radius); border:1px solid rgba(0,201,177,0.15); padding:24px; text-align:center;">
-      <p class="lang-tr" style="color:var(--gray); margin-bottom:16px;">Bildiri göndermek için aşağıdaki butona tıklayın.</p>
-      <p class="lang-en block" style="color:var(--gray); margin-bottom:16px;">Click below to submit your paper.</p>
-      <a href="https://holivent.com/icdah2026/login/signin?event=icdah2026" class="btn-primary" target="_blank">
-        <span class="lang-tr">Bildiri Gönder</span><span class="lang-en">Submit Paper</span>
-      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu">☰</button>
     </div>
   </div>
-</section>
 
-<div id="footer-placeholder"></div>
-<script src="js/layout.js"></script>
-<script src="js/main.js"></script>
+  <div class="container mobile-panel" id="mobilePanel">
+    <nav>
+      <a href="index.html"><span data-lang-inline="tr">Ana Sayfa</span><span data-lang-inline="en">Home</span></a>
+      <a href="programme.html"><span data-lang-inline="tr">Program</span><span data-lang-inline="en">Programme</span></a>
+      <a href="speakers.html"><span data-lang-inline="tr">Konuşmacılar</span><span data-lang-inline="en">Speakers</span></a>
+      <a href="venue.html"><span data-lang-inline="tr">Yer</span><span data-lang-inline="en">Venue</span></a>
+      <a href="dates.html"><span data-lang-inline="tr">Tarihler</span><span data-lang-inline="en">Dates</span></a>
+      <a href="register.html"><span data-lang-inline="tr">Kayıt</span><span data-lang-inline="en">Register</span></a>
+      <a href="contact.html"><span data-lang-inline="tr">İletişim</span><span data-lang-inline="en">Contact</span></a>
+    </nav>
+  </div>
+</header>
+<main class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span data-lang-inline="tr">Tarihler</span><span data-lang-inline="en">Dates</span></div>
+      <h2><span data-lang="tr">Önemli tarihler</span><span data-lang="en">Important dates</span></h2>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th><span data-lang-inline="tr">Tarih</span><span data-lang-inline="en">Date</span></th>
+            <th><span data-lang-inline="tr">Açıklama</span><span data-lang-inline="en">Description</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>25 April 2025</td><td><span data-lang="tr">Öneri gönderim açılışı</span><span data-lang="en">Proposal submission opens</span></td></tr>
+          <tr><td>15 June 2025</td><td><span data-lang="tr">Kayıt açılışı</span><span data-lang="en">Registration opens</span></td></tr>
+          <tr><td>15 December 2025</td><td><span data-lang="tr">Öneri son tarihi</span><span data-lang="en">Proposal submission deadline</span></td></tr>
+          <tr><td>End of January 2026</td><td><span data-lang="tr">Değerlendirme sonuçları</span><span data-lang="en">Evaluation results and acceptance notices</span></td></tr>
+          <tr><td>1 April 2026</td><td><span data-lang="tr">Erken kayıt son günü</span><span data-lang="en">Early bird deadline</span></td></tr>
+          <tr><td>15 April 2026</td><td><span data-lang="tr">Sunum yapanlar için kayıt son tarihi</span><span data-lang="en">Presenter registration deadline</span></td></tr>
+          <tr><td>23 June 2026</td><td><span data-lang="tr">Ön konferans</span><span data-lang="en">Pre-conference</span></td></tr>
+          <tr><td>24–26 June 2026</td><td><span data-lang="tr">Ana kongre</span><span data-lang="en">Main congress</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>Çanakkale Congress 2026</strong>
+      <div><span data-lang-inline="tr">Mobil uyumlu · İki dilli · GitHub Pages hazır</span><span data-lang-inline="en">Responsive · Bilingual · GitHub Pages ready</span></div>
+    </div>
+    <div><span data-lang-inline="tr">İletişim: info@canakkalecongress.org</span><span data-lang-inline="en">Contact: info@canakkalecongress.org</span></div>
+  </div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
