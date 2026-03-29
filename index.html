@@ -1,520 +1,20 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="lang-tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ICED26 Style Bilingual Conference Site</title>
-  <meta name="description" content="Türkçe / English, mobil uyumlu, çok sayfalı hissiyat veren konferans sitesi klonu." />
-  <style>
-    :root {
-      --bg: #f6f0ea;
-      --surface: #fffaf6;
-      --card: #ffffff;
-      --text: #1f1a19;
-      --muted: #6d625d;
-      --accent: #8a5a44;
-      --accent-dark: #5c3a2b;
-      --line: rgba(31, 26, 25, 0.1);
-      --hero-overlay: rgba(15, 11, 10, 0.46);
-      --shadow: 0 18px 60px rgba(0,0,0,.08);
-      --radius: 28px;
-      --max: 1240px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
-    }
-
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
-
-    .container {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(14px);
-      background: rgba(246, 240, 234, .88);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      min-height: 78px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-
-    .brand-badge {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: linear-gradient(145deg, #ffffff, #efe5dc);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      color: var(--accent-dark);
-    }
-
-    .brand-text small {
-      display: block;
-      font-size: 11px;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 2px;
-    }
-
-    .brand-text strong {
-      display: block;
-      font-size: 19px;
-      letter-spacing: -.02em;
-    }
-
-    .desktop-nav {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .desktop-nav a {
-      font-size: 14px;
-      color: var(--muted);
-      transition: .2s ease;
-    }
-
-    .desktop-nav a:hover,
-    .desktop-nav a.active { color: var(--text); }
-
-    .topbar-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .lang-switch {
-      display: inline-flex;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 4px;
-      background: #fff;
-    }
-
-    .lang-switch button {
-      border: 0;
-      background: transparent;
-      border-radius: 999px;
-      padding: 8px 12px;
-      cursor: pointer;
-      color: var(--muted);
-    }
-
-    .lang-switch button.active {
-      background: var(--text);
-      color: #fff;
-    }
-
-    .menu-toggle {
-      display: none;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      background: #fff;
-      cursor: pointer;
-    }
-
-    .mobile-panel {
-      display: none;
-      border-top: 1px solid var(--line);
-      padding: 14px 0 18px;
-    }
-
-    .mobile-panel.open { display: block; }
-
-    .mobile-panel nav {
-      display: grid;
-      gap: 10px;
-    }
-
-    .mobile-panel a {
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: rgba(255,255,255,.72);
-      border: 1px solid var(--line);
-      color: var(--muted);
-    }
-
-    .page { display: none; }
-    .page.active { display: block; }
-
-    .hero {
-      position: relative;
-      min-height: 84vh;
-      display: grid;
-      align-items: end;
-      overflow: hidden;
-      border-bottom: 1px solid var(--line);
-      background:
-        linear-gradient(var(--hero-overlay), var(--hero-overlay)),
-        url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      color: #fff;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 180px;
-      background: linear-gradient(to top, rgba(0,0,0,.35), transparent);
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 28px;
-      align-items: end;
-      padding: 84px 0 70px;
-    }
-
-    .eyebrow {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: .35em;
-      opacity: .78;
-      margin-bottom: 14px;
-    }
-
-    .hero h1 {
-      margin: 0;
-      font-size: clamp(44px, 9vw, 88px);
-      line-height: .95;
-      letter-spacing: -.05em;
-    }
-
-    .hero h2 {
-      margin: 16px 0 0;
-      font-size: clamp(24px, 4vw, 42px);
-      line-height: 1.08;
-      max-width: 880px;
-    }
-
-    .hero p {
-      max-width: 760px;
-      font-size: clamp(16px, 2vw, 19px);
-      opacity: .9;
-      margin-top: 22px;
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 20px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: .2s ease;
-      font-weight: 600;
-    }
-
-    .btn-primary {
-      background: #fff;
-      color: var(--text);
-    }
-
-    .btn-primary:hover { transform: translateY(-1px); }
-
-    .btn-secondary {
-      background: transparent;
-      color: #fff;
-      border-color: rgba(255,255,255,.24);
-    }
-
-    .btn-secondary:hover { background: rgba(255,255,255,.08); }
-
-    .hero-card {
-      justify-self: end;
-      width: min(100%, 420px);
-      border-radius: 30px;
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow: 0 20px 70px rgba(0,0,0,.16);
-      padding: 24px;
-      backdrop-filter: blur(16px);
-    }
-
-    .hero-card h3 {
-      margin: 10px 0 8px;
-      font-size: 28px;
-      line-height: 1.1;
-    }
-
-    .hero-card p { margin: 0; font-size: 15px; }
-
-    .section {
-      padding: 88px 0;
-    }
-
-    .section.alt {
-      background: rgba(255,255,255,.5);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-head {
-      max-width: 880px;
-      margin-bottom: 34px;
-    }
-
-    .section-head h3 {
-      margin: 8px 0 0;
-      font-size: clamp(32px, 4vw, 52px);
-      line-height: 1.05;
-      letter-spacing: -.04em;
-    }
-
-    .section-head p {
-      color: var(--muted);
-      margin-top: 14px;
-      font-size: 16px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: .88fr 1.12fr;
-      gap: 34px;
-    }
-
-    .cards-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 28px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 26px;
-      box-shadow: var(--shadow);
-    }
-
-    .card h4 {
-      margin: 8px 0 8px;
-      font-size: 28px;
-      line-height: 1.08;
-      letter-spacing: -.03em;
-    }
-
-    .card p,
-    .card li,
-    .muted {
-      color: var(--muted);
-    }
-
-    .list {
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 12px;
-      margin: 18px 0 0;
-    }
-
-    .list li {
-      display: grid;
-      grid-template-columns: 10px 1fr;
-      gap: 12px;
-      align-items: start;
-      font-size: 15px;
-    }
-
-    .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      margin-top: 10px;
-    }
-
-    .schedule {
-      display: grid;
-      gap: 18px;
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .speaker-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .speaker-card {
-      overflow: hidden;
-      padding: 0;
-    }
-
-    .speaker-card img {
-      width: 100%;
-      aspect-ratio: 1 / 1.05;
-      object-fit: cover;
-      background: #ece4dc;
-    }
-
-    .speaker-body { padding: 22px; }
-
-    .table-wrap {
-      overflow: hidden;
-      border-radius: 28px;
-      border: 1px solid var(--line);
-      background: #fff;
-      box-shadow: var(--shadow);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      padding: 18px 20px;
-      text-align: left;
-      border-bottom: 1px solid var(--line);
-      vertical-align: top;
-    }
-
-    th {
-      background: rgba(31, 26, 25, .04);
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: .15em;
-      color: var(--muted);
-    }
-
-    tr:last-child td { border-bottom: 0; }
-
-    .pricing {
-      background: #201a19;
-      color: #fff;
-      border-radius: 32px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-    }
-
-    .pricing .table-wrap {
-      background: transparent;
-      border-color: rgba(255,255,255,.12);
-      box-shadow: none;
-    }
-
-    .pricing th, .pricing td { border-color: rgba(255,255,255,.1); }
-    .pricing th { background: rgba(255,255,255,.06); color: rgba(255,255,255,.68); }
-    .pricing td { color: rgba(255,255,255,.88); }
-
-    .page-links {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .page-link {
-      padding: 26px;
-      border-radius: 28px;
-      background: #fff;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      transition: .2s ease;
-    }
-
-    .page-link:hover { transform: translateY(-3px); }
-
-    .footer {
-      border-top: 1px solid var(--line);
-      background: #181312;
-      color: rgba(255,255,255,.7);
-      padding: 30px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    [data-lang] { display: none; }
-    html.lang-tr [data-lang="tr"] { display: block; }
-    html.lang-en [data-lang="en"] { display: block; }
-    html.lang-tr [data-lang-inline="tr"],
-    html.lang-en [data-lang-inline="en"] { display: inline; }
-    html.lang-tr [data-lang-inline="en"],
-    html.lang-en [data-lang-inline="tr"] { display: none; }
-
-    @media (max-width: 1080px) {
-      .desktop-nav { display: none; }
-      .menu-toggle { display: inline-grid; place-items: center; }
-      .hero-inner,
-      .grid-2,
-      .cards-3,
-      .schedule,
-      .speaker-grid,
-      .page-links {
-        grid-template-columns: 1fr;
-      }
-      .hero-card { justify-self: stretch; }
-    }
-
-    @media (max-width: 720px) {
-      .container { width: min(var(--max), calc(100% - 20px)); }
-      .topbar-inner { min-height: 70px; }
-      .section { padding: 62px 0; }
-      .card, .page-link, .pricing { padding: 20px; }
-      th, td { padding: 14px 14px; font-size: 14px; }
-      .hero { min-height: 78vh; }
-      .hero-inner { padding: 60px 0 44px; }
-      .hero-card h3 { font-size: 24px; }
-      .hero-cta { gap: 10px; }
-      .btn { width: 100%; }
-      .topbar-actions { gap: 8px; }
-      .brand-text strong { font-size: 17px; }
-    }
-  </style>
+  <title>ICED26 Style Clone</title>
+  <meta
+    name="description"
+    content="Türkçe / English, mobil uyumlu, çok bölümlü konferans sitesi."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="topbar">
@@ -522,39 +22,86 @@
       <a href="#home" class="brand" data-route="home">
         <div class="brand-badge">IC</div>
         <div class="brand-text">
-          <small><span data-lang-inline="tr">Konferans</span><span data-lang-inline="en">Conference</span></small>
+          <small>
+            <span data-lang-inline="tr">Konferans</span>
+            <span data-lang-inline="en">Conference</span>
+          </small>
           <strong>ICED26 Clone</strong>
         </div>
       </a>
 
       <nav class="desktop-nav">
-        <a href="#home" data-route="home"><span data-lang-inline="tr">Ana Sayfa</span><span data-lang-inline="en">Home</span></a>
-        <a href="#theme" data-route="theme"><span data-lang-inline="tr">Tema</span><span data-lang-inline="en">Theme</span></a>
-        <a href="#programme" data-route="programme"><span data-lang-inline="tr">Program</span><span data-lang-inline="en">Programme</span></a>
-        <a href="#speakers" data-route="speakers"><span data-lang-inline="tr">Konuşmacılar</span><span data-lang-inline="en">Speakers</span></a>
-        <a href="#venue" data-route="venue"><span data-lang-inline="tr">Mekân</span><span data-lang-inline="en">Venue</span></a>
-        <a href="#dates" data-route="dates"><span data-lang-inline="tr">Tarihler</span><span data-lang-inline="en">Dates</span></a>
-        <a href="#register" data-route="register"><span data-lang-inline="tr">Kayıt</span><span data-lang-inline="en">Register</span></a>
+        <a href="#home" data-route="home">
+          <span data-lang-inline="tr">Ana Sayfa</span>
+          <span data-lang-inline="en">Home</span>
+        </a>
+        <a href="#theme" data-route="theme">
+          <span data-lang-inline="tr">Tema</span>
+          <span data-lang-inline="en">Theme</span>
+        </a>
+        <a href="#programme" data-route="programme">
+          <span data-lang-inline="tr">Program</span>
+          <span data-lang-inline="en">Programme</span>
+        </a>
+        <a href="#speakers" data-route="speakers">
+          <span data-lang-inline="tr">Konuşmacılar</span>
+          <span data-lang-inline="en">Speakers</span>
+        </a>
+        <a href="#venue" data-route="venue">
+          <span data-lang-inline="tr">Mekân</span>
+          <span data-lang-inline="en">Venue</span>
+        </a>
+        <a href="#dates" data-route="dates">
+          <span data-lang-inline="tr">Tarihler</span>
+          <span data-lang-inline="en">Dates</span>
+        </a>
+        <a href="#register" data-route="register">
+          <span data-lang-inline="tr">Kayıt</span>
+          <span data-lang-inline="en">Register</span>
+        </a>
       </nav>
 
       <div class="topbar-actions">
-        <div class="lang-switch" aria-label="language switcher">
+        <div class="lang-switch" aria-label="Language switcher">
           <button id="langTR" class="active" type="button">TR</button>
           <button id="langEN" type="button">EN</button>
         </div>
-        <button class="menu-toggle" id="menuToggle" type="button" aria-label="menu">☰</button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu">
+          ☰
+        </button>
       </div>
     </div>
 
     <div class="container mobile-panel" id="mobilePanel">
       <nav>
-        <a href="#home" data-route="home"><span data-lang-inline="tr">Ana Sayfa</span><span data-lang-inline="en">Home</span></a>
-        <a href="#theme" data-route="theme"><span data-lang-inline="tr">Tema</span><span data-lang-inline="en">Theme</span></a>
-        <a href="#programme" data-route="programme"><span data-lang-inline="tr">Program</span><span data-lang-inline="en">Programme</span></a>
-        <a href="#speakers" data-route="speakers"><span data-lang-inline="tr">Konuşmacılar</span><span data-lang-inline="en">Speakers</span></a>
-        <a href="#venue" data-route="venue"><span data-lang-inline="tr">Mekân</span><span data-lang-inline="en">Venue</span></a>
-        <a href="#dates" data-route="dates"><span data-lang-inline="tr">Tarihler</span><span data-lang-inline="en">Dates</span></a>
-        <a href="#register" data-route="register"><span data-lang-inline="tr">Kayıt</span><span data-lang-inline="en">Register</span></a>
+        <a href="#home" data-route="home">
+          <span data-lang-inline="tr">Ana Sayfa</span>
+          <span data-lang-inline="en">Home</span>
+        </a>
+        <a href="#theme" data-route="theme">
+          <span data-lang-inline="tr">Tema</span>
+          <span data-lang-inline="en">Theme</span>
+        </a>
+        <a href="#programme" data-route="programme">
+          <span data-lang-inline="tr">Program</span>
+          <span data-lang-inline="en">Programme</span>
+        </a>
+        <a href="#speakers" data-route="speakers">
+          <span data-lang-inline="tr">Konuşmacılar</span>
+          <span data-lang-inline="en">Speakers</span>
+        </a>
+        <a href="#venue" data-route="venue">
+          <span data-lang-inline="tr">Mekân</span>
+          <span data-lang-inline="en">Venue</span>
+        </a>
+        <a href="#dates" data-route="dates">
+          <span data-lang-inline="tr">Tarihler</span>
+          <span data-lang-inline="en">Dates</span>
+        </a>
+        <a href="#register" data-route="register">
+          <span data-lang-inline="tr">Kayıt</span>
+          <span data-lang-inline="en">Register</span>
+        </a>
       </nav>
     </div>
   </header>
@@ -564,31 +111,63 @@
       <section class="hero" id="home">
         <div class="container hero-inner">
           <div>
-            <div class="eyebrow"><span data-lang-inline="tr">Uluslararası Konferans</span><span data-lang-inline="en">International Conference</span></div>
+            <div class="eyebrow">
+              <span data-lang-inline="tr">Uluslararası Konferans</span>
+              <span data-lang-inline="en">International Conference</span>
+            </div>
+
             <h1>ICED26</h1>
+
             <h2>
               <span data-lang="tr">Sağlığın farklı boyutlarını birlikte düşünelim</span>
               <span data-lang="en">Exploring the different dimensions of wellbeing together</span>
             </h2>
+
             <p>
-              <span data-lang="tr">Ana görsel, sağlığın fiziksel, zihinsel, duygusal ve sosyal boyutlarını çağrıştıracak şekilde seçildi. Site iki dilli, mobil uyumlu ve GitHub Pages üzerinde yayınlanabilecek tek dosyalı HTML/CSS/JS yapısında hazırlandı.</span>
-              <span data-lang="en">The hero image was chosen to evoke physical, mental, emotional, and social dimensions of wellbeing. The site is bilingual, mobile responsive, and prepared as a single-file HTML/CSS/JS structure that can be published on GitHub Pages.</span>
+              <span data-lang="tr">
+                Fiziksel, zihinsel, duygusal ve sosyal sağlığın kesişimlerini öne çıkaran,
+                iki dilli ve mobil uyumlu premium bir konferans deneyimi.
+              </span>
+              <span data-lang="en">
+                A premium bilingual and mobile-responsive conference experience highlighting
+                the intersections of physical, mental, emotional, and social wellbeing.
+              </span>
             </p>
+
             <div class="hero-cta">
-              <a class="btn btn-primary" href="#programme" data-route="programme"><span data-lang-inline="tr">Programı Gör</span><span data-lang-inline="en">View Programme</span></a>
-              <a class="btn btn-secondary" href="#register" data-route="register"><span data-lang-inline="tr">Kayıt Ol</span><span data-lang-inline="en">Register</span></a>
+              <a class="btn btn-primary" href="#programme" data-route="programme">
+                <span data-lang-inline="tr">Programı Gör</span>
+                <span data-lang-inline="en">View Programme</span>
+              </a>
+              <a class="btn btn-secondary" href="#register" data-route="register">
+                <span data-lang-inline="tr">Kayıt Ol</span>
+                <span data-lang-inline="en">Register</span>
+              </a>
             </div>
           </div>
 
           <aside class="hero-card">
-            <div class="eyebrow"><span data-lang-inline="tr">Güncelleme</span><span data-lang-inline="en">Update</span></div>
+            <div class="eyebrow">
+              <span data-lang-inline="tr">Güncelleme</span>
+              <span data-lang-inline="en">Update</span>
+            </div>
             <h3>
-              <span data-lang="tr">Piksel-perfect yapıya yaklaşan, çok bölümlü modern konferans açılış ekranı</span>
-              <span data-lang="en">A near pixel-perfect, multi-section modern conference landing experience</span>
+              <span data-lang="tr">
+                Modern, temiz ve çok sayfalı hissiyat veren açılış tasarımı
+              </span>
+              <span data-lang="en">
+                A modern, clean landing design with a multi-page feel
+              </span>
             </h3>
             <p>
-              <span data-lang="tr">Bu yapı, ana sayfa + alt sayfa hissi veren bölüm geçişleriyle çalışır. İstersen bunu ayrı HTML dosyalarına da bölebilirsin.</span>
-              <span data-lang="en">This structure works as a homepage with section-based multi-page navigation. You can also split it into separate HTML files later.</span>
+              <span data-lang="tr">
+                Bu yapı GitHub Pages üzerinde doğrudan çalışır. İstersen ileride her bölümü
+                ayrı HTML sayfalarına da bölebilirsin.
+              </span>
+              <span data-lang="en">
+                This structure runs directly on GitHub Pages. You can later split each section
+                into separate HTML pages if you want.
+              </span>
             </p>
           </aside>
         </div>
@@ -598,33 +177,86 @@
         <div class="container">
           <div class="grid-2">
             <div class="section-head">
-              <div class="eyebrow"><span data-lang-inline="tr">Tema</span><span data-lang-inline="en">Theme</span></div>
+              <div class="eyebrow">
+                <span data-lang-inline="tr">Tema</span>
+                <span data-lang-inline="en">Theme</span>
+              </div>
               <h3>
                 <span data-lang="tr">Ajans, öğrenme ve bütüncül sağlık yaklaşımı</span>
                 <span data-lang="en">Agency, learning, and a holistic wellbeing approach</span>
               </h3>
             </div>
+
             <div>
-              <p class="muted" data-lang="tr">Bu bölüm, kullanıcının istediği gibi iki dilli ve premium görünümlü hazırlandı. Orijinal yapıyı korurken yeni başlık anlatısını sağlık eksenine taşıdım. Böylece ana slaytta istenen “sağlığın farklı boyutları” vurgusu güçlü biçimde hissediliyor.</p>
-              <p class="muted" data-lang="en">This section was designed to be bilingual and premium-looking, as requested. While preserving the original structure, I shifted the main narrative toward wellbeing so the requested emphasis on the different dimensions of health is strongly reflected in the hero experience.</p>
+              <p class="muted" data-lang="tr">
+                Bu bölüm, orijinal konferans sitesi hissini korurken senin istediğin sağlık
+                merkezli anlatıyı öne çıkarır. Hero alanı ve alt kartlar birlikte
+                “sağlığın farklı boyutları” temasını güçlendirir.
+              </p>
+              <p class="muted" data-lang="en">
+                This section preserves the feel of the original conference site while bringing
+                forward the wellbeing-centered narrative you requested. The hero area and
+                supporting cards reinforce the theme of the different dimensions of health.
+              </p>
             </div>
           </div>
 
           <div class="cards-3">
             <article class="card">
-              <div class="eyebrow"><span data-lang-inline="tr">Boyut 01</span><span data-lang-inline="en">Dimension 01</span></div>
-              <h4><span data-lang="tr">Fiziksel Sağlık</span><span data-lang="en">Physical Wellbeing</span></h4>
-              <p><span data-lang="tr">Hareket, enerji, dinlenme, beslenme ve sürdürülebilir günlük yaşam pratikleri.</span><span data-lang="en">Movement, energy, rest, nutrition, and sustainable daily life practices.</span></p>
+              <div class="eyebrow">
+                <span data-lang-inline="tr">Boyut 01</span>
+                <span data-lang-inline="en">Dimension 01</span>
+              </div>
+              <h4>
+                <span data-lang="tr">Fiziksel Sağlık</span>
+                <span data-lang="en">Physical Wellbeing</span>
+              </h4>
+              <p>
+                <span data-lang="tr">
+                  Hareket, enerji, uyku, beslenme ve sürdürülebilir günlük yaşam alışkanlıkları.
+                </span>
+                <span data-lang="en">
+                  Movement, energy, sleep, nutrition, and sustainable daily life habits.
+                </span>
+              </p>
             </article>
+
             <article class="card">
-              <div class="eyebrow"><span data-lang-inline="tr">Boyut 02</span><span data-lang-inline="en">Dimension 02</span></div>
-              <h4><span data-lang="tr">Zihinsel ve Duygusal Sağlık</span><span data-lang="en">Mental & Emotional Wellbeing</span></h4>
-              <p><span data-lang="tr">Odak, dayanıklılık, farkındalık, duygusal denge ve öğrenme kapasitesi.</span><span data-lang="en">Focus, resilience, awareness, emotional balance, and learning capacity.</span></p>
+              <div class="eyebrow">
+                <span data-lang-inline="tr">Boyut 02</span>
+                <span data-lang-inline="en">Dimension 02</span>
+              </div>
+              <h4>
+                <span data-lang="tr">Zihinsel ve Duygusal Sağlık</span>
+                <span data-lang="en">Mental & Emotional Wellbeing</span>
+              </h4>
+              <p>
+                <span data-lang="tr">
+                  Odak, farkındalık, duygusal denge, dayanıklılık ve öğrenme kapasitesi.
+                </span>
+                <span data-lang="en">
+                  Focus, awareness, emotional balance, resilience, and learning capacity.
+                </span>
+              </p>
             </article>
+
             <article class="card">
-              <div class="eyebrow"><span data-lang-inline="tr">Boyut 03</span><span data-lang-inline="en">Dimension 03</span></div>
-              <h4><span data-lang="tr">Sosyal ve Toplumsal Sağlık</span><span data-lang="en">Social & Community Wellbeing</span></h4>
-              <p><span data-lang="tr">Bağ kurma, aidiyet, iş birliği, güven ve kapsayıcı deneyimler tasarlama.</span><span data-lang="en">Connection, belonging, collaboration, trust, and designing inclusive experiences.</span></p>
+              <div class="eyebrow">
+                <span data-lang-inline="tr">Boyut 03</span>
+                <span data-lang-inline="en">Dimension 03</span>
+              </div>
+              <h4>
+                <span data-lang="tr">Sosyal ve Toplumsal Sağlık</span>
+                <span data-lang="en">Social & Community Wellbeing</span>
+              </h4>
+              <p>
+                <span data-lang="tr">
+                  Bağ kurma, aidiyet, iş birliği, güven ve kapsayıcı topluluk deneyimleri.
+                </span>
+                <span data-lang="en">
+                  Connection, belonging, collaboration, trust, and inclusive community experiences.
+                </span>
+              </p>
             </article>
           </div>
         </div>
@@ -633,22 +265,56 @@
       <section class="section alt">
         <div class="container">
           <div class="section-head">
-            <div class="eyebrow"><span data-lang-inline="tr">Sayfalar</span><span data-lang-inline="en">Pages</span></div>
-            <h3><span data-lang="tr">Çok sayfalı yapı</span><span data-lang="en">Multi-page structure</span></h3>
-            <p><span data-lang="tr">Aşağıdaki kartlar, sitede ayrı sayfa gibi çalışan bölümlere yönlendirir.</span><span data-lang="en">The cards below route to sections that behave like separate pages inside the site.</span></p>
+            <div class="eyebrow">
+              <span data-lang-inline="tr">Sayfalar</span>
+              <span data-lang-inline="en">Pages</span>
+            </div>
+            <h3>
+              <span data-lang="tr">Çok sayfalı yapı</span>
+              <span data-lang="en">Multi-page structure</span>
+            </h3>
+            <p>
+              <span data-lang="tr">
+                Aşağıdaki kartlar, sitede ayrı sayfa gibi çalışan bölümlere yönlendirir.
+              </span>
+              <span data-lang="en">
+                The cards below route to sections that behave like separate pages inside the site.
+              </span>
+            </p>
           </div>
+
           <div class="page-links">
             <a href="#programme" data-route="programme" class="page-link">
-              <strong><span data-lang-inline="tr">Program</span><span data-lang-inline="en">Programme</span></strong>
-              <p class="muted"><span data-lang="tr">Günlere ve oturumlara ayrılmış zaman planı.</span><span data-lang="en">Time plan divided by days and sessions.</span></p>
+              <strong>
+                <span data-lang-inline="tr">Program</span>
+                <span data-lang-inline="en">Programme</span>
+              </strong>
+              <p class="muted">
+                <span data-lang="tr">Günlere ve oturumlara ayrılmış zaman planı.</span>
+                <span data-lang="en">Time plan divided by days and sessions.</span>
+              </p>
             </a>
+
             <a href="#speakers" data-route="speakers" class="page-link">
-              <strong><span data-lang-inline="tr">Konuşmacılar</span><span data-lang-inline="en">Speakers</span></strong>
-              <p class="muted"><span data-lang="tr">Öne çıkan isimler ve sunum başlıkları.</span><span data-lang="en">Featured speakers and session titles.</span></p>
+              <strong>
+                <span data-lang-inline="tr">Konuşmacılar</span>
+                <span data-lang-inline="en">Speakers</span>
+              </strong>
+              <p class="muted">
+                <span data-lang="tr">Öne çıkan isimler ve sunum başlıkları.</span>
+                <span data-lang="en">Featured speakers and presentation titles.</span>
+              </p>
             </a>
+
             <a href="#register" data-route="register" class="page-link">
-              <strong><span data-lang-inline="tr">Kayıt</span><span data-lang-inline="en">Register</span></strong>
-              <p class="muted"><span data-lang="tr">Ücretler, kategoriler ve katılım seçenekleri.</span><span data-lang="en">Fees, categories, and participation options.</span></p>
+              <strong>
+                <span data-lang-inline="tr">Kayıt</span>
+                <span data-lang-inline="en">Register</span>
+              </strong>
+              <p class="muted">
+                <span data-lang="tr">Ücretler, kategoriler ve katılım seçenekleri.</span>
+                <span data-lang="en">Fees, categories, and participation options.</span>
+              </p>
             </a>
           </div>
         </div>
@@ -659,12 +325,22 @@
       <section class="section" id="programme">
         <div class="container">
           <div class="section-head">
-            <div class="eyebrow"><span data-lang-inline="tr">Program</span><span data-lang-inline="en">Programme</span></div>
-            <h3><span data-lang="tr">Konferans akışı</span><span data-lang="en">Conference flow</span></h3>
+            <div class="eyebrow">
+              <span data-lang-inline="tr">Program</span>
+              <span data-lang-inline="en">Programme</span>
+            </div>
+            <h3>
+              <span data-lang="tr">Konferans akışı</span>
+              <span data-lang="en">Conference flow</span>
+            </h3>
           </div>
+
           <div class="schedule">
             <article class="card">
-              <h4><span data-lang="tr">Ön Konferans</span><span data-lang="en">Pre-Conference</span></h4>
+              <h4>
+                <span data-lang="tr">Ön Konferans</span>
+                <span data-lang="en">Pre-Conference</span>
+              </h4>
               <ul class="list">
                 <li><span class="dot"></span><span><strong>08:00</strong> <span data-lang-inline="tr">Karşılama ve kayıt</span><span data-lang-inline="en">Welcome and registration</span></span></li>
                 <li><span class="dot"></span><span><strong>09:00</strong> <span data-lang-inline="tr">Paralel atölyeler A</span><span data-lang-inline="en">Parallel workshops A</span></span></li>
@@ -673,8 +349,12 @@
                 <li><span class="dot"></span><span><strong>16:30</strong> <span data-lang-inline="tr">Paralel atölyeler C</span><span data-lang-inline="en">Parallel workshops C</span></span></li>
               </ul>
             </article>
+
             <article class="card">
-              <h4><span data-lang="tr">Ana Konferans</span><span data-lang="en">Main Conference</span></h4>
+              <h4>
+                <span data-lang="tr">Ana Konferans</span>
+                <span data-lang="en">Main Conference</span>
+              </h4>
               <ul class="list">
                 <li><span class="dot"></span><span><strong>Day 1</strong> <span data-lang-inline="tr">Açılış ve keynote</span><span data-lang-inline="en">Opening and keynote</span></span></li>
                 <li><span class="dot"></span><span><strong>Day 2</strong> <span data-lang-inline="tr">Paralel oturumlar ve panel</span><span data-lang-inline="en">Parallel sessions and panel</span></span></li>
@@ -691,29 +371,56 @@
       <section class="section alt" id="speakers">
         <div class="container">
           <div class="section-head">
-            <div class="eyebrow"><span data-lang-inline="tr">Konuşmacılar</span><span data-lang-inline="en">Speakers</span></div>
-            <h3><span data-lang="tr">Öne çıkan isimler</span><span data-lang="en">Featured voices</span></h3>
+            <div class="eyebrow">
+              <span data-lang-inline="tr">Konuşmacılar</span>
+              <span data-lang-inline="en">Speakers</span>
+            </div>
+            <h3>
+              <span data-lang="tr">Öne çıkan isimler</span>
+              <span data-lang="en">Featured voices</span>
+            </h3>
           </div>
+
           <div class="speaker-grid">
             <article class="card speaker-card">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" alt="speaker 1" />
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80"
+                alt="Speaker 1"
+              />
               <div class="speaker-body">
                 <h4>Dr. Maya Ellis</h4>
-                <p><span data-lang="tr">Zihinsel dayanıklılık ve öğrenme tasarımı</span><span data-lang="en">Mental resilience and learning design</span></p>
+                <p>
+                  <span data-lang="tr">Zihinsel dayanıklılık ve öğrenme tasarımı</span>
+                  <span data-lang="en">Mental resilience and learning design</span>
+                </p>
               </div>
             </article>
+
             <article class="card speaker-card">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80" alt="speaker 2" />
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80"
+                alt="Speaker 2"
+              />
               <div class="speaker-body">
                 <h4>Prof. Daniel Reed</h4>
-                <p><span data-lang="tr">Topluluk sağlığı ve kurum kültürü</span><span data-lang="en">Community wellbeing and institutional culture</span></p>
+                <p>
+                  <span data-lang="tr">Topluluk sağlığı ve kurum kültürü</span>
+                  <span data-lang="en">Community wellbeing and institutional culture</span>
+                </p>
               </div>
             </article>
+
             <article class="card speaker-card">
-              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=900&q=80" alt="speaker 3" />
+              <img
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=900&q=80"
+                alt="Speaker 3"
+              />
               <div class="speaker-body">
                 <h4>Franziska Keller</h4>
-                <p><span data-lang="tr">Sürdürülebilir sağlık ekosistemleri</span><span data-lang="en">Sustainable wellbeing ecosystems</span></p>
+                <p>
+                  <span data-lang="tr">Sürdürülebilir sağlık ekosistemleri</span>
+                  <span data-lang="en">Sustainable wellbeing ecosystems</span>
+                </p>
               </div>
             </article>
           </div>
@@ -725,13 +432,40 @@
       <section class="section" id="venue">
         <div class="container">
           <div class="section-head">
-            <div class="eyebrow"><span data-lang-inline="tr">Mekân</span><span data-lang-inline="en">Venue</span></div>
-            <h3><span data-lang="tr">Etkinlik alanı</span><span data-lang="en">Event venue</span></h3>
+            <div class="eyebrow">
+              <span data-lang-inline="tr">Mekân</span>
+              <span data-lang-inline="en">Venue</span>
+            </div>
+            <h3>
+              <span data-lang="tr">Etkinlik alanı</span>
+              <span data-lang="en">Event venue</span>
+            </h3>
           </div>
+
           <div class="cards-3">
-            <article class="card"><h4>Main Hall</h4><p><span data-lang="tr">Ana oturumlar ve keynote sunumları.</span><span data-lang="en">Main sessions and keynote presentations.</span></p></article>
-            <article class="card"><h4>Workshop Rooms</h4><p><span data-lang="tr">Paralel atölye ve uygulama alanları.</span><span data-lang="en">Parallel workshop and practice rooms.</span></p></article>
-            <article class="card"><h4>Networking Lounge</h4><p><span data-lang="tr">Sosyal bağ kurma ve mola alanı.</span><span data-lang="en">A space for networking and breaks.</span></p></article>
+            <article class="card">
+              <h4>Main Hall</h4>
+              <p>
+                <span data-lang="tr">Ana oturumlar ve keynote sunumları.</span>
+                <span data-lang="en">Main sessions and keynote presentations.</span>
+              </p>
+            </article>
+
+            <article class="card">
+              <h4>Workshop Rooms</h4>
+              <p>
+                <span data-lang="tr">Paralel atölye ve uygulama alanları.</span>
+                <span data-lang="en">Parallel workshop and practice rooms.</span>
+              </p>
+            </article>
+
+            <article class="card">
+              <h4>Networking Lounge</h4>
+              <p>
+                <span data-lang="tr">Sosyal bağ kurma ve mola alanı.</span>
+                <span data-lang="en">A space for networking and breaks.</span>
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -741,23 +475,66 @@
       <section class="section alt" id="dates">
         <div class="container">
           <div class="section-head">
-            <div class="eyebrow"><span data-lang-inline="tr">Tarihler</span><span data-lang-inline="en">Dates</span></div>
-            <h3><span data-lang="tr">Önemli tarihler</span><span data-lang="en">Important dates</span></h3>
+            <div class="eyebrow">
+              <span data-lang-inline="tr">Tarihler</span>
+              <span data-lang-inline="en">Dates</span>
+            </div>
+            <h3>
+              <span data-lang="tr">Önemli tarihler</span>
+              <span data-lang="en">Important dates</span>
+            </h3>
           </div>
+
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th><span data-lang-inline="tr">Tarih</span><span data-lang-inline="en">Date</span></th>
-                  <th><span data-lang-inline="tr">Açıklama</span><span data-lang-inline="en">Description</span></th>
+                  <th>
+                    <span data-lang-inline="tr">Tarih</span>
+                    <span data-lang-inline="en">Date</span>
+                  </th>
+                  <th>
+                    <span data-lang-inline="tr">Açıklama</span>
+                    <span data-lang-inline="en">Description</span>
+                  </th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td>25 April 2025</td><td><span data-lang="tr">Öneri gönderim açılışı</span><span data-lang="en">Proposal submission opens</span></td></tr>
-                <tr><td>15 June 2025</td><td><span data-lang="tr">Kayıt açılışı</span><span data-lang="en">Registration opens</span></td></tr>
-                <tr><td>15 December 2025</td><td><span data-lang="tr">Öneri son tarihi</span><span data-lang="en">Proposal submission deadline</span></td></tr>
-                <tr><td>1 April 2026</td><td><span data-lang="tr">Erken kayıt son günü</span><span data-lang="en">Early bird deadline</span></td></tr>
-                <tr><td>24–26 June 2026</td><td><span data-lang="tr">Konferans günleri</span><span data-lang="en">Conference dates</span></td></tr>
+                <tr>
+                  <td>25 April 2025</td>
+                  <td>
+                    <span data-lang="tr">Öneri gönderim açılışı</span>
+                    <span data-lang="en">Proposal submission opens</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>15 June 2025</td>
+                  <td>
+                    <span data-lang="tr">Kayıt açılışı</span>
+                    <span data-lang="en">Registration opens</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>15 December 2025</td>
+                  <td>
+                    <span data-lang="tr">Öneri son tarihi</span>
+                    <span data-lang="en">Proposal submission deadline</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1 April 2026</td>
+                  <td>
+                    <span data-lang="tr">Erken kayıt son günü</span>
+                    <span data-lang="en">Early bird deadline</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>24–26 June 2026</td>
+                  <td>
+                    <span data-lang="tr">Konferans günleri</span>
+                    <span data-lang="en">Conference dates</span>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -769,23 +546,60 @@
       <section class="section" id="register">
         <div class="container">
           <div class="section-head">
-            <div class="eyebrow"><span data-lang-inline="tr">Kayıt</span><span data-lang-inline="en">Register</span></div>
-            <h3><span data-lang="tr">Ücretlendirme</span><span data-lang="en">Pricing</span></h3>
+            <div class="eyebrow">
+              <span data-lang-inline="tr">Kayıt</span>
+              <span data-lang-inline="en">Register</span>
+            </div>
+            <h3>
+              <span data-lang="tr">Ücretlendirme</span>
+              <span data-lang="en">Pricing</span>
+            </h3>
           </div>
+
           <div class="pricing">
             <div class="table-wrap">
               <table>
                 <thead>
                   <tr>
-                    <th><span data-lang-inline="tr">Kategori</span><span data-lang-inline="en">Category</span></th>
-                    <th><span data-lang-inline="tr">Erken</span><span data-lang-inline="en">Early</span></th>
-                    <th><span data-lang-inline="tr">Normal</span><span data-lang-inline="en">Regular</span></th>
+                    <th>
+                      <span data-lang-inline="tr">Kategori</span>
+                      <span data-lang-inline="en">Category</span>
+                    </th>
+                    <th>
+                      <span data-lang-inline="tr">Erken</span>
+                      <span data-lang-inline="en">Early</span>
+                    </th>
+                    <th>
+                      <span data-lang-inline="tr">Normal</span>
+                      <span data-lang-inline="en">Regular</span>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td><span data-lang="tr">Standart katılım</span><span data-lang="en">Standard attendance</span></td><td>€575</td><td>€650</td></tr>
-                  <tr><td><span data-lang="tr">Online katılım</span><span data-lang="en">Online attendance</span></td><td>€200</td><td>€275</td></tr>
-                  <tr><td><span data-lang="tr">Ön konferans atölyeleri</span><span data-lang="en">Pre-conference workshops</span></td><td>€100</td><td>€100</td></tr>
+                  <tr>
+                    <td>
+                      <span data-lang="tr">Standart katılım</span>
+                      <span data-lang="en">Standard attendance</span>
+                    </td>
+                    <td>€575</td>
+                    <td>€650</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span data-lang="tr">Online katılım</span>
+                      <span data-lang="en">Online attendance</span>
+                    </td>
+                    <td>€200</td>
+                    <td>€275</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span data-lang="tr">Ön konferans atölyeleri</span>
+                      <span data-lang="en">Pre-conference workshops</span>
+                    </td>
+                    <td>€100</td>
+                    <td>€100</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -799,65 +613,18 @@
     <div class="container footer-inner">
       <div>
         <strong>ICED26 Style Clone</strong>
-        <div><span data-lang-inline="tr">Tek dosyalı HTML/CSS/JS export</span><span data-lang-inline="en">Single-file HTML/CSS/JS export</span></div>
+        <div>
+          <span data-lang-inline="tr">Tek dosyalı mantık, 3 dosyalı yapı</span>
+          <span data-lang-inline="en">Single-page logic, 3-file structure</span>
+        </div>
       </div>
-      <div><span data-lang-inline="tr">Mobil uyumlu · İki dilli · GitHub Pages hazır</span><span data-lang-inline="en">Responsive · Bilingual · GitHub Pages ready</span></div>
+      <div>
+        <span data-lang-inline="tr">Mobil uyumlu · İki dilli · GitHub Pages hazır</span>
+        <span data-lang-inline="en">Responsive · Bilingual · GitHub Pages ready</span>
+      </div>
     </div>
   </footer>
 
-  <script>
-    const html = document.documentElement;
-    const langTR = document.getElementById('langTR');
-    const langEN = document.getElementById('langEN');
-    const menuToggle = document.getElementById('menuToggle');
-    const mobilePanel = document.getElementById('mobilePanel');
-    const navLinks = [...document.querySelectorAll('[data-route]')];
-    const pages = {
-      home: document.getElementById('page-home'),
-      theme: document.getElementById('page-home'),
-      programme: document.getElementById('page-programme'),
-      speakers: document.getElementById('page-speakers'),
-      venue: document.getElementById('page-venue'),
-      dates: document.getElementById('page-dates'),
-      register: document.getElementById('page-register')
-    };
-
-    function setLanguage(lang) {
-      html.classList.remove('lang-tr', 'lang-en');
-      html.classList.add(lang === 'en' ? 'lang-en' : 'lang-tr');
-      langTR.classList.toggle('active', lang !== 'en');
-      langEN.classList.toggle('active', lang === 'en');
-      localStorage.setItem('siteLang', lang);
-    }
-
-    function setRoute(route, push = true) {
-      const target = pages[route] ? route : 'home';
-      Object.values(pages).forEach(page => page.classList.remove('active'));
-      pages[target].classList.add('active');
-      navLinks.forEach(link => link.classList.toggle('active', link.dataset.route === target));
-      if (push) history.replaceState({}, '', '#' + target);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      mobilePanel.classList.remove('open');
-    }
-
-    langTR.addEventListener('click', () => setLanguage('tr'));
-    langEN.addEventListener('click', () => setLanguage('en'));
-    menuToggle.addEventListener('click', () => mobilePanel.classList.toggle('open'));
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        const route = link.dataset.route;
-        if (!route) return;
-        e.preventDefault();
-        setRoute(route);
-      });
-    });
-
-    const initialLang = localStorage.getItem('siteLang') || 'tr';
-    setLanguage(initialLang);
-
-    const hash = location.hash.replace('#', '');
-    setRoute(hash || 'home', false);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
