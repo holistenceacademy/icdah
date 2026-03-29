@@ -5,368 +5,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ICDAH 2026 — 7. Uluslararası Farklı Boyutlarıyla Sağlık Konferansı</title>
   <meta name="description" content="7th International Conference on Different Aspects of Health — 11-12 December 2026, Çanakkale, Turkey (Hybrid)">
+  
   <link rel="stylesheet" href="css/style.css">
-  <style>.lang-en{display:none!important}body.en .lang-tr{display:none!important}body.en .lang-en{display:inline!important}body.en .lang-en.block,body.en p.lang-en,body.en h2.lang-en,body.en h1.lang-en,body.en div.lang-en,body.en span.lang-en{display:block!important}.lang-tr.block{display:block!important}</style>
+  
+  <style>
+    /* Dil geçişi için hızlı CSS kuralları */
+    [data-lang] { display: none; }
+    html[lang="tr"] [data-lang="tr"] { display: block; }
+    html[lang="en"] [data-lang="en"] { display: block; }
+    /* Inline elementler için (span gibi) */
+    html[lang="tr"] span[data-lang="tr"] { display: inline; }
+    html[lang="en"] span[data-lang="en"] { display: inline; }
+  </style>
 </head>
-<body>
+<body class="hero-gradient">
 
 <div id="navbar-placeholder"></div>
 
-<!-- ===== HERO SLIDER ===== -->
 <section class="hero">
-
-  <!-- Slide 1 -->
-  <div class="slide slide-1">
+  <div class="slide slide-1 active">
     <div class="slide-bg"></div>
-    <div class="slide-content">
-      <div class="slide-badge">🌍 <span class="lang-tr">Hibrit Etkinlik</span><span class="lang-en">Hybrid Event</span></div>
-      <div class="slide-tag">ICDAH 2026</div>
-      <h1>
-        <span class="lang-tr">7. Uluslararası<br><span class="highlight">Farklı Boyutlarıyla</span><br>Sağlık Konferansı</span>
-        <span class="lang-en block">7th International Conference on<br><span class="highlight">Different Aspects</span><br>of Health</span>
-      </h1>
-      <div class="slide-meta">
-        <span><span class="dot">📅</span>
-          <span class="lang-tr">11–12 Aralık 2026</span>
-          <span class="lang-en">11–12 December 2026</span>
-        </span>
-        <span><span class="dot">📍</span> Çanakkale, Türkiye</span>
-        <span><span class="dot">🎥</span> YouTube Live</span>
+    <div class="slide-content animate-on-scroll">
+      <div class="slide-badge">
+        🌍 <span data-lang="tr">Hibrit Etkinlik (Yüz Yüze & Online)</span>
+        <span data-lang="en">Hybrid Event (In-Person & Online)</span>
       </div>
-      <div class="slide-actions">
-        <a href="https://holivent.com/icdah2026/login/signin?event=icdah2026" class="btn-primary" target="_blank">
-          <span class="lang-tr">Bildiri Gönder</span><span class="lang-en">Submit Paper</span>
+      
+      <h1 class="display-title">
+        <span data-lang="tr">ICDAH 2026: Sağlığın <span class="text-primary">Farklı Boyutları</span></span>
+        <span data-lang="en">ICDAH 2026: <span class="text-primary">Different Aspects</span> of Health</span>
+      </h1>
+      
+      <p class="hero-subtext">
+        <span data-lang="tr">7. Uluslararası Konferans | 11-12 Aralık 2026 | Çanakkale, Türkiye</span>
+        <span data-lang="en">7th International Conference | Dec 11-12, 2026 | Çanakkale, Turkey</span>
+      </p>
+
+      <div class="countdown-container">
+        <div class="timer-box"><span id="days">00</span><small>Gün/Days</small></div>
+        <div class="timer-box"><span id="hours">00</span><small>Saat/Hrs</small></div>
+        <div class="timer-box"><span id="minutes">00</span><small>Dak/Min</small></div>
+      </div>
+
+      <div class="hero-btns">
+        <a href="https://holivent.com/icdah2026" class="btn-primary" target="_blank">
+          <span data-lang="tr">Hemen Kayıt Ol</span>
+          <span data-lang="en">Register Now</span>
         </a>
         <a href="dates.html" class="btn-secondary">
-          <span class="lang-tr">Önemli Tarihler</span><span class="lang-en">Important Dates</span>
+          <span data-lang="tr">Önemli Tarihler</span>
+          <span data-lang="en">Important Dates</span>
         </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Slide 2 -->
-  <div class="slide slide-2">
-    <div class="slide-bg"></div>
-    <div class="slide-content">
-      <div class="slide-badge">📢 <span class="lang-tr">Bildiri Çağrısı</span><span class="lang-en">Call for Papers</span></div>
-      <h1>
-        <span class="lang-tr"><span class="highlight">Çok Disiplinli</span><br>Akademik Çalışmalar<br>İçin Bir Platform</span>
-        <span class="lang-en block">A Platform for<br><span class="highlight">Multidisciplinary</span><br>Academic Work</span>
-      </h1>
-      <h2>
-        <span class="lang-tr">Tüm sağlıkla ilgili alanlar kabul edilmektedir</span>
-        <span class="lang-en">All health-related disciplines are welcome</span>
-      </h2>
-      <div class="slide-meta">
-        <span><span class="dot">🔬</span>
-          <span class="lang-tr">35+ Tema Alanı</span>
-          <span class="lang-en">35+ Theme Areas</span>
-        </span>
-        <span><span class="dot">🌐</span>
-          <span class="lang-tr">Türkçe & İngilizce</span>
-          <span class="lang-en">Turkish & English</span>
-        </span>
-        <span><span class="dot">✅</span>
-          <span class="lang-tr">Çift Kör Hakem</span>
-          <span class="lang-en">Double-Blind Review</span>
-        </span>
-      </div>
-      <div class="slide-actions">
-        <a href="themes.html" class="btn-primary">
-          <span class="lang-tr">Temalara Bak</span><span class="lang-en">View Themes</span>
-        </a>
-        <a href="writing-rules.html" class="btn-secondary">
-          <span class="lang-tr">Yazım Kuralları</span><span class="lang-en">Writing Rules</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Slide 3 -->
-  <div class="slide slide-3">
-    <div class="slide-bg"></div>
-    <div class="slide-content">
-      <div class="slide-badge">🎤 <span class="lang-tr">Davetli Konuşmacılar</span><span class="lang-en">Invited Speakers</span></div>
-      <h1>
-        <span class="lang-tr"><span class="highlight">Dünya'nın</span><br>Dört Bir Yanından<br>Uzman İsimler</span>
-        <span class="lang-en block">Expert Voices<br>from <span class="highlight">Around</span><br>the World</span>
-      </h1>
-      <h2>
-        <span class="lang-tr">Hindistan · Romanya · Meksika · Birleşik Krallık</span>
-        <span class="lang-en">India · Romania · Mexico · United Kingdom</span>
-      </h2>
-      <div class="slide-actions">
-        <a href="speakers.html" class="btn-primary">
-          <span class="lang-tr">Konuşmacıları Gör</span><span class="lang-en">View Speakers</span>
-        </a>
-        <a href="program.html" class="btn-secondary">
-          <span class="lang-tr">Program</span><span class="lang-en">Program</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Slider Controls -->
-  <div class="slider-dots">
-    <button class="slider-dot" aria-label="Slide 1"></button>
-    <button class="slider-dot" aria-label="Slide 2"></button>
-    <button class="slider-dot" aria-label="Slide 3"></button>
-  </div>
-  <div class="slider-arrows">
-    <button class="slider-arrow arrow-prev" aria-label="Previous">&#8592;</button>
-    <button class="slider-arrow arrow-next" aria-label="Next">&#8594;</button>
-  </div>
-</section>
-
-<!-- ===== STATS ===== -->
-<section class="stats-bar section-sm">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <span class="stat-num">7.</span>
-        <span class="stat-label lang-tr">Kongre Yılı</span>
-        <span class="stat-label lang-en">Edition</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">35+</span>
-        <span class="stat-label lang-tr">Tema Alanı</span>
-        <span class="stat-label lang-en">Theme Areas</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">4</span>
-        <span class="stat-label lang-tr">Uluslararası Konuşmacı</span>
-        <span class="stat-label lang-en">Int'l Speakers</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">2</span>
-        <span class="stat-label lang-tr">Gün</span>
-        <span class="stat-label lang-en">Days</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== ABOUT ===== -->
+<section class="section-sm">
+  <div class="container grid-4 gap-20">
+    <div class="glass-card text-center animate-on-scroll">
+      <h2 class="text-primary">35+</h2>
+      <p data-lang="tr">Akademik Tema</p>
+      <p data-lang="en">Academic Themes</p>
+    </div>
+    <div class="glass-card text-center animate-on-scroll">
+      <h2 class="text-primary">10+</h2>
+      <p data-lang="tr">Ülke Katılımı</p>
+      <p data-lang="en">Participating Countries</p>
+    </div>
+    <div class="glass-card text-center animate-on-scroll">
+      <h2 class="text-primary">2</h2>
+      <p data-lang="tr">Yayın Olanğı</p>
+      <p data-lang="en">Publication Options</p>
+    </div>
+    <div class="glass-card text-center animate-on-scroll">
+      <h2 class="text-primary">7.</h2>
+      <p data-lang="tr">Yıl Dönümü</p>
+      <p data-lang="en">Year Anniversary</p>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-text">
-        <div class="section-header" style="text-align:left; margin-bottom:28px;">
-          <span class="overline lang-tr">Kongre Hakkında</span>
-          <span class="overline lang-en">About the Conference</span>
-          <h2 class="lang-tr" style="text-align:left;">Sağlığa Farklı<br>Açılardan Bakmak</h2>
-          <h2 class="lang-en block" style="text-align:left;">A Multidimensional<br>View of Health</h2>
-        </div>
-        <p class="lang-tr">Son yıllarda karşı karşıya kaldığımız küresel ısınma, küresel salgınlar ve savaşlar, yaşam kalitesi ve sağlığın hayatımızdaki önemini daha belirgin hale getirmiştir. Sağlık, kişisel durum yanında toplumla ilgili pek çok durumu da derinden etkilemekte; aynı zamanda bunlardan da etkilenmektedir.</p>
-        <p class="lang-en block">The global warming, global epidemics, and wars we have been facing in recent years have made the importance of quality of life and health more evident. Health profoundly affects many aspects of society as well as individual circumstances; at the same time, it is also affected by these circumstances.</p>
-        <p class="lang-tr">Sağlığı, bir insanı veya bir toplumu oluşturan faktörlerden bağımsız düşünmek hatalı olacaktır. Bu bağlamda, tüm bu konu alanlarını konuşmak ve tartışmak adına 11-12 Aralık 2026 tarihleri arasında <strong class="text-teal">VII. Uluslararası Farklı Boyutlarıyla Sağlık Konferansı (ICDAH2026)</strong> gerçekleştirilecektir.</p>
-        <p class="lang-en block">It would be incorrect to consider health independently of the factors that comprise a person or a society. In this context, the <strong class="text-teal">7th International Conference on Different Aspects of Health (ICDAH2026)</strong> will be held on December 11-12, 2026.</p>
-        <div class="hybrid-badge">
-          🎥 <span class="lang-tr">Tüm sunumlar YouTube'dan canlı yayınlanacaktır</span>
-          <span class="lang-en">All presentations will be broadcast live on YouTube</span>
+    <div class="grid-2-1 gap-40 align-center">
+      <div class="animate-on-scroll">
+        <h2 class="section-title">
+          <span data-lang="tr">Konferans Hakkında</span>
+          <span data-lang="en">About the Conference</span>
+        </h2>
+        <div class="content-text">
+          <p data-lang="tr">
+            7. Uluslararası Farklı Boyutlarıyla Sağlık Konferansı (ICDAH 2026), sağlık bilimleri, sosyal bilimler ve uygulamalı bilimler alanlarındaki güncel gelişmeleri tartışmak üzere akademisyenleri bir araya getiriyor.
+          </p>
+          <p data-lang="en">
+            The 7th International Conference on Different Aspects of Health (ICDAH 2026) brings together academicians to discuss current developments in health sciences, social sciences, and applied sciences.
+          </p>
         </div>
       </div>
-      <div>
-        <div class="about-card">
-          <div class="chair-title lang-tr">Kongre Başkanı</div>
-          <div class="chair-title lang-en">Conference Chair</div>
-          <div class="chair-name">Prof. Dr. Özge UYSAL ŞAHİN</div>
-          <div class="chair-info lang-tr">
-            Çanakkale Onsekiz Mart Üniversitesi<br>
-            Çanakkale Uygulamalı Bilimler Fakültesi<br>
-            Sağlık Yönetimi Bölümü, Sağlık Ekonomisi ABD<br>
-            <strong class="text-teal">YAKALDER Yönetim Kurulu Başkanı</strong>
-          </div>
-          <div class="chair-info lang-en block">
-            Çanakkale Onsekiz Mart University<br>
-            Faculty of Applied Sciences<br>
-            Department of Health Management, Health Economics<br>
-            <strong class="text-teal">YAKALDER Board Chairman</strong>
-          </div>
-        </div>
-        <div class="about-card" style="margin-top:20px;">
-          <div class="chair-title lang-tr">Kongre Amacı</div>
-          <div class="chair-title lang-en">Conference Purpose</div>
-          <p class="lang-tr" style="color:var(--gray); font-size:0.9rem; line-height:1.8;">Bu konferansın amacı, disiplinlerarası bir bakış açısıyla sağlık konusunda dünyanın dört bir yanından akademisyenleri ve araştırmacıları bir araya getirmektir.</p>
-          <p class="lang-en block" style="color:var(--gray); font-size:0.9rem; line-height:1.8;">The purpose of this conference is to bring together academics and researchers from around the world with an interdisciplinary perspective on health.</p>
-        </div>
+      <div class="glass-card animate-on-scroll">
+        <h4 data-lang="tr">Önemli Hatırlatma</h4>
+        <h4 data-lang="en">Important Note</h4>
+        <p class="small" data-lang="tr">Bildirileriniz çift-kör hakem değerlendirmesinden geçmektedir.</p>
+        <p class="small" data-lang="en">Submissions undergo a double-blind peer review process.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== IMPORTANT DATES ===== -->
-<section class="dates-section section">
-  <div class="container">
-    <div class="section-header">
-      <span class="overline lang-tr">Zaman Çizelgesi</span>
-      <span class="overline lang-en">Timeline</span>
-      <h2 class="lang-tr">Önemli Tarihler</h2>
-      <h2 class="lang-en">Important Dates</h2>
-    </div>
-    <div class="dates-grid">
-      <div class="date-card">
-        <div class="date-icon">📄</div>
-        <div class="date-info">
-          <div class="date-label lang-tr">Bildiri Özeti Son Gün</div>
-          <div class="date-label lang-en">Abstract Submission Deadline</div>
-          <div class="date-value lang-tr">24 Kasım 2026</div>
-          <div class="date-value lang-en">November 24, 2026</div>
-        </div>
-      </div>
-      <div class="date-card">
-        <div class="date-icon">✅</div>
-        <div class="date-info">
-          <div class="date-label lang-tr">Kabul Edilen Bildiriler</div>
-          <div class="date-label lang-en">Announcement of Accepted Papers</div>
-          <div class="date-value lang-tr">25 Kasım 2026</div>
-          <div class="date-value lang-en">November 25, 2026</div>
-        </div>
-      </div>
-      <div class="date-card">
-        <div class="date-icon">📝</div>
-        <div class="date-info">
-          <div class="date-label lang-tr">Kayıt Son Tarihi</div>
-          <div class="date-label lang-en">Registration Deadline</div>
-          <div class="date-value lang-tr">29 Kasım 2026</div>
-          <div class="date-value lang-en">November 29, 2026</div>
-        </div>
-      </div>
-      <div class="date-card">
-        <div class="date-icon">📋</div>
-        <div class="date-info">
-          <div class="date-label lang-tr">Program İlanı</div>
-          <div class="date-label lang-en">Conference Program Announcement</div>
-          <div class="date-value lang-tr">30 Kasım 2026</div>
-          <div class="date-value lang-en">November 30, 2026</div>
-        </div>
-      </div>
-      <div class="date-card">
-        <div class="date-icon">📑</div>
-        <div class="date-info">
-          <div class="date-label lang-tr">Tam Metin Son Gün</div>
-          <div class="date-label lang-en">Full Text Submission Deadline</div>
-          <div class="date-value lang-tr">15 Aralık 2026</div>
-          <div class="date-value lang-en">December 15, 2026</div>
-        </div>
-      </div>
-      <div class="date-card" style="border-color: var(--gold); background: rgba(245,166,35,0.05);">
-        <div class="date-icon">🎤</div>
-        <div class="date-info">
-          <div class="date-label lang-tr" style="color:var(--gold);">Kongre Tarihleri</div>
-          <div class="date-label lang-en" style="color:var(--gold);">Conference Dates</div>
-          <div class="date-value lang-tr" style="color:var(--gold);">11–12 Aralık 2026</div>
-          <div class="date-value lang-en" style="color:var(--gold);">December 11–12, 2026</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SPEAKERS PREVIEW ===== -->
 <section class="section">
-  <div class="container">
-    <div class="section-header">
-      <span class="overline lang-tr">Davetli Konuşmacılar</span>
-      <span class="overline lang-en">Invited Speakers</span>
-      <h2 class="lang-tr">Uluslararası Uzmanlar</h2>
-      <h2 class="lang-en">International Experts</h2>
-    </div>
-    <div class="speakers-grid">
-      <div class="speaker-card">
-        <div class="speaker-avatar">RR</div>
-        <div class="speaker-name">Prof. Dr. Ravinder Rena</div>
-        <div class="speaker-role">DUT Business School, Faculty of Management Sciences<br>Durban University of Technology — 🇿🇦 South Africa</div>
-        <div class="speaker-topic lang-tr">"Dijital Ekonomi ve VUCA Dünyasında Risk Yönetimi"</div>
-        <div class="speaker-topic lang-en">"Digital Economy and Risk Management in the VUCA World"</div>
-      </div>
-      <div class="speaker-card">
-        <div class="speaker-avatar">LB</div>
-        <div class="speaker-name">Prof. Dr. Larissa-Margareta Batrancea</div>
-        <div class="speaker-role">Department of Business<br>Babeș-Bolyai University — 🇷🇴 Romania</div>
-        <div class="speaker-topic lang-tr">"Kurumlar Çöktüğünde Sağlık Bedel Öder"</div>
-        <div class="speaker-topic lang-en">"When Institutions Break, Health Pays the Price"</div>
-      </div>
-      <div class="speaker-card">
-        <div class="speaker-avatar">JR</div>
-        <div class="speaker-name">Prof. Dr. Julia Rodriguez Morales</div>
-        <div class="speaker-role">Benemérita Universidad Autónoma de Puebla — 🇲🇽 Mexico</div>
-        <div class="speaker-topic lang-tr">"Hibrit Ortamlarda Sağlık Politikaları ve BT Liderliği"</div>
-        <div class="speaker-topic lang-en">"Leadership with Purpose: The Role of the CIO in Health Policies"</div>
-      </div>
-      <div class="speaker-card">
-        <div class="speaker-avatar">RC</div>
-        <div class="speaker-name">Dr. Rhyddhi Chakraborty</div>
-        <div class="speaker-role">Faculty of Health, Medicine and Social Care<br>Anglia Ruskin University — 🇬🇧 UK</div>
-        <div class="speaker-topic lang-tr">"İklim Adaleti ve Sağlık: Kırılganlıktan Dayanıklılığa"</div>
-        <div class="speaker-topic lang-en">"From Vulnerability to Resilience: Health and Climate Justice"</div>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:36px;">
-      <a href="speakers.html" class="btn-secondary">
-        <span class="lang-tr">Tüm Konuşmacılar →</span>
-        <span class="lang-en">All Speakers →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== THEMES PREVIEW ===== -->
-<section class="themes-section section">
-  <div class="container">
-    <div class="section-header">
-      <span class="overline lang-tr">Konu Alanları</span>
-      <span class="overline lang-en">Subject Areas</span>
-      <h2 class="lang-tr">Temalar</h2>
-      <h2 class="lang-en">Themes</h2>
-      <p class="lang-tr">Sağlık ile ilişkilendirilebilen bütün alanlar kabul edilmektedir.</p>
-      <p class="lang-en">All fields that can be associated with health are accepted.</p>
-    </div>
-    <div class="themes-grid">
-      <div class="theme-item"><div class="theme-dot"></div><div class="theme-text"><span class="lang-tr">Sağlık ve Ekonomi</span><span class="lang-en">Health and Economy</span></div></div>
-      <div class="theme-item"><div class="theme-dot"></div><div class="theme-text"><span class="lang-tr">Sağlık, Yönetim ve Organizasyon</span><span class="lang-en">Health, Management and Organization</span></div></div>
-      <div class="theme-item"><div class="theme-dot"></div><div class="theme-text"><span class="lang-tr">Sağlık ve Hukuk</span><span class="lang-en">Health and Law</span></div></div>
-      <div class="theme-item"><div class="theme-dot"></div><div class="theme-text"><span class="lang-tr">Sağlık, Teknoloji ve İnovasyon</span><span class="lang-en">Health, Technology and Innovation</span></div></div>
-      <div class="theme-item"><div class="theme-dot"></div><div class="theme-text"><span class="lang-tr">Sağlık ve Kültür</span><span class="lang-en">Health and Culture</span></div></div>
-      <div class="theme-item"><div class="theme-dot"></div><div class="theme-text"><span class="lang-tr">Sağlık ve Eğitim</span><span class="lang-en">Health and Education</span></div></div>
-      <div class="theme-item"><div class="theme-dot"></div><div class="theme-text"><span class="lang-tr">Sağlık ve Turizm</span><span class="lang-en">Health and Tourism</span></div></div>
-      <div class="theme-item"><div class="theme-dot"></div><div class="theme-text"><span class="lang-tr">Sağlık ve Çevre</span><span class="lang-en">Health and Environment</span></div></div>
-    </div>
-    <div style="text-align:center; margin-top:32px;">
-      <a href="themes.html" class="btn-secondary">
-        <span class="lang-tr">Tüm Temalara Bak (35+) →</span>
-        <span class="lang-en">View All Themes (35+) →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PARTNERS ===== -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <span class="overline lang-tr">Akademik Paydaşlar</span>
-      <span class="overline lang-en">Academic Partners</span>
-      <h2 class="lang-tr">Kurumsal İşbirlikleri</h2>
-      <h2 class="lang-en">Institutional Partnerships</h2>
-    </div>
+  <div class="container text-center">
+    <h3 class="mb-32">
+      <span data-lang="tr">Akademik Paydaşlarımız</span>
+      <span data-lang="en">Academic Partners</span>
+    </h3>
     <div class="partners-grid">
-      <div class="partner-card">
-        <div class="partner-name">Çanakkale Onsekiz Mart University</div>
-        <div class="partner-country">🇹🇷 Türkiye</div>
-      </div>
-      <div class="partner-card">
-        <div class="partner-name">Çanakkale Faculty of Applied Sciences</div>
-        <div class="partner-country">🇹🇷 Türkiye</div>
-      </div>
-      <div class="partner-card">
-        <div class="partner-name">University of Agribusiness and Rural Development</div>
-        <div class="partner-country">🇧🇬 Bulgaria</div>
-      </div>
-      <div class="partner-card">
-        <div class="partner-name">Holistence Academy</div>
-        <div class="partner-country">🇹🇷 Türkiye</div>
-      </div>
+      <div class="partner-card">ÇOMÜ</div>
+      <div class="partner-card">YAKALDER</div>
+      <div class="partner-card">Holistence Academy</div>
+      <div class="partner-card">UARD (Bulgaria)</div>
     </div>
   </div>
 </section>
@@ -375,5 +132,11 @@
 
 <script src="js/layout.js"></script>
 <script src="js/main.js"></script>
+<script>
+  // Navbar ve Footer'ı yükle
+  document.getElementById('navbar-placeholder').innerHTML = getNavbar();
+  document.getElementById('footer-placeholder').innerHTML = getFooter();
+</script>
+
 </body>
 </html>

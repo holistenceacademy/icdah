@@ -1,0 +1,45 @@
+:root {
+  --primary: #00f2fe; /* Canlı Turkuaz */
+  --secondary: #4facfe; /* Gök Mavisi */
+  --dark-bg: #0a0f1d;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --text-main: #e2e8f0;
+  --text-dim: #94a3b8;
+  --accent: #f5a623;
+  --glass: blur(12px) saturate(180%);
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-main);
+  font-family: 'Nunito Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Cam Morfolojisi (Glassmorphism) Kartları */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.glass-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Dinamik Dil Gizleme */
+[data-lang] { display: none; }
+html[lang="tr"] [data-lang="tr"] { display: block; }
+html[lang="en"] [data-lang="en"] { display: block; }
+
+/* Kahraman (Hero) Bölümü Gradient Animasyonu */
+.hero-gradient {
+  background: radial-gradient(circle at top right, rgba(79, 172, 254, 0.15), transparent),
+              radial-gradient(circle at bottom left, rgba(0, 242, 254, 0.1), transparent);
+}
