@@ -1,199 +1,44 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ICDAH 2026 — 7. Uluslararası Farklı Boyutlarıyla Sağlık Konferansı</title>
-  
-  <link rel="stylesheet" href="css/style.css">
-  
-  <style>
-    /* ICED26 Temasından Esinlenen Özel Stillendirme */
-    :root {
-      --iced-navy: #0a192f;
-      --iced-accent: #00c9b1;
-      --iced-glass: rgba(255, 255, 255, 0.03);
-    }
-
-    body {
-      background-color: var(--iced-navy);
-      color: #e6f1ff;
-      font-family: 'Syne', sans-serif;
-    }
-
-    /* Hero Bölümü: ICED26 Tarzı Büyük Başlıklar */
-    .hero-iced {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle at 50% 50%, #112240 0%, #0a192f 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-iced::after {
-      content: '';
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
-      opacity: 0.05;
-    }
-
-    .hero-content {
-      z-index: 10;
-      text-align: center;
-      max-width: 1000px;
-      padding: 0 20px;
-    }
-
-    .main-title {
-      font-size: clamp(2.5rem, 8vw, 5rem);
-      font-weight: 800;
-      line-height: 1;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      letter-spacing: -2px;
-    }
-
-    .highlight-text {
-      background: linear-gradient(90deg, #00c9b1, #f5a623);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* Tarih ve Yer Kartı */
-    .info-strip {
-      display: inline-flex;
-      background: var(--iced-glass);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 15px 30px;
-      border-radius: 100px;
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    /* Dil Seçenekleri için Görünürlük Kontrolü */
-    [data-lang] { display: none; }
-    html[lang="tr"] [data-lang="tr"] { display: block; }
-    html[lang="en"] [data-lang="en"] { display: block; }
-    html[lang="tr"] span[data-lang="tr"] { display: inline; }
-    html[lang="en"] span[data-lang="en"] { display: inline; }
-
-    /* Kartlar: ICED26 Modern Grid */
-    .feature-card {
-      background: var(--iced-glass);
-      border: 1px solid rgba(255,255,255,0.05);
-      padding: 40px;
-      border-radius: 24px;
-      transition: all 0.3s ease;
-    }
-
-    .feature-card:hover {
-      background: rgba(255,255,255,0.07);
-      transform: translateY(-5px);
-      border-color: var(--iced-accent);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>ICDAH 2026 — Uluslararası Farklı Boyutlarıyla Sağlık Konferansı</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body lang="tr">
+<body>
+    <div id="navbar-placeholder"></div>
 
-<div id="navbar-placeholder"></div>
+    <header class="page-hero">
+        <h1>ICDAH 2026</h1>
+        <p class="sub">7. Uluslararası Farklı Boyutlarıyla Sağlık Konferansı</p>
+        <div class="info-strip">
+            <span>📅 11-12 Aralık 2026</span>
+            <span>📍 Çanakkale, Türkiye (Hibrit)</span>
+        </div>
+    </header>
 
-<section class="hero-iced">
-  <div class="hero-content animate-on-scroll">
-    <div class="slide-badge" style="color: var(--iced-accent); border-color: var(--iced-accent);">
-      <span data-lang="tr">7. Uluslararası Konferans</span>
-      <span data-lang="en">7th International Conference</span>
-    </div>
-    
-    <h1 class="main-title">
-      <span data-lang="tr">DIFFERENT ASPECTS OF <br><span class="highlight-text">HEALTH 2026</span></span>
-      <span data-lang="en">DIFFERENT ASPECTS OF <br><span class="highlight-text">HEALTH 2026</span></span>
-    </h1>
+    <section class="section">
+        <div class="container">
+            <h2>Yayın Olanakları</h2>
+            <div class="pub-grid">
+                <div class="pub-card">
+                    <h3>Bildiri Kitabı</h3>
+                    <p>ISBN'li e-kitap olarak yayınlanacaktır.</p>
+                </div>
+                <div class="pub-card">
+                    <h3>Editoryal Kitap</h3>
+                    <p>Uluslararası editoryal kitaplarda bölüm imkanı.</p>
+                </div>
+                <div class="pub-card">
+                    <h3>İndeksli Dergiler</h3>
+                    <p>Uluslararası hakemli dergilerde makale yayını.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="info-strip">
-      <div class="info-item">📅 <span data-lang="tr">11-12 Aralık 2026</span><span data-lang="en">11-12 Dec 2026</span></div>
-      <div class="info-item">📍 <span data-lang="tr">Çanakkale, Türkiye (Hibrit)</span><span data-lang="en">Çanakkale, Turkey (Hybrid)</span></div>
-    </div>
-
-    <div class="hero-btns" style="margin-top: 40px;">
-      <a href="https://holivent.com/icdah2026" class="btn-primary" style="padding: 18px 45px; border-radius: 10px;">
-        <span data-lang="tr">Bildiri Gönder</span><span data-lang="en">Submit Abstract</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container grid-4 gap-20">
-    <div class="feature-card text-center">
-      <h2 style="color: var(--iced-accent); font-size: 3rem;">35+</h2>
-      <p data-lang="tr">Tema Alanı</p><p data-lang="en">Theme Areas</p>
-    </div>
-    <div class="feature-card text-center">
-      <h2 style="color: var(--iced-accent); font-size: 3rem;">04</h2>
-      <p data-lang="tr">Davetli Konuşmacı</p><p data-lang="en">Keynote Speakers</p>
-    </div>
-    <div class="feature-card text-center">
-      <h2 style="color: var(--iced-accent); font-size: 3rem;">02</h2>
-      <p data-lang="tr">Gün Panel & Sunum</p><p data-lang="en">Days of Sessions</p>
-    </div>
-    <div class="feature-card text-center">
-      <h2 style="color: var(--iced-accent); font-size: 3rem;">07.</h2>
-      <p data-lang="tr">Konferans Yılı</p><p data-lang="en">Edition</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="background: #0d1d36;">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="main-title" style="font-size: 2.5rem; text-align: left;">
-        <span data-lang="tr">DAVETLİ <span class="highlight-text">KONUŞMACILAR</span></span>
-        <span data-lang="en">KEYNOTE <span class="highlight-text">SPEAKERS</span></span>
-      </h2>
-    </div>
-    
-    <div class="grid-4 gap-24 mt-32">
-      <div class="feature-card" style="padding: 20px; text-align: left;">
-        <div style="width: 100%; height: 250px; background: #1a2a4a; border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--iced-accent);">RR</div>
-        <h4 style="margin-bottom: 5px;">Prof. Dr. Ravinder Rena</h4>
-        <p style="font-size: 0.8rem; color: #8892b0;">South Africa</p>
-      </div>
-      <div class="feature-card" style="padding: 20px; text-align: left;">
-        <div style="width: 100%; height: 250px; background: #1a2a4a; border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--iced-accent);">LB</div>
-        <h4 style="margin-bottom: 5px;">Prof. Dr. Larissa Batrancea</h4>
-        <p style="font-size: 0.8rem; color: #8892b0;">Romania</p>
-      </div>
-      <div class="feature-card" style="padding: 20px; text-align: left;">
-        <div style="width: 100%; height: 250px; background: #1a2a4a; border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--iced-accent);">JR</div>
-        <h4 style="margin-bottom: 5px;">Prof. Dr. Julia R. Morales</h4>
-        <p style="font-size: 0.8rem; color: #8892b0;">Mexico</p>
-      </div>
-      <div class="feature-card" style="padding: 20px; text-align: left;">
-        <div style="width: 100%; height: 250px; background: #1a2a4a; border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--iced-accent);">RC</div>
-        <h4 style="margin-bottom: 5px;">Dr. Rhyddhi Chakraborty</h4>
-        <p style="font-size: 0.8rem; color: #8892b0;">United Kingdom</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="footer-placeholder"></div>
-
-<script src="js/layout.js"></script>
-<script src="js/main.js"></script>
-<script>
-  // Dil yönetimi için basit tetikleyici
-  document.querySelectorAll('.lang-toggle button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.body.setAttribute('lang', btn.getAttribute('data-lang'));
-    });
-  });
-</script>
-
+    <div id="footer-placeholder"></div>
+    <script src="js/layout.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
